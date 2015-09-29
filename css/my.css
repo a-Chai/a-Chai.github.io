@@ -2,6 +2,10 @@
   text-transform: none;
 }
 
+#my .light-yellow {
+  background-color:rgb(231, 255, 197);;
+}
+
 #my .light-blue {
   background-color:rgb(181,233,255);
 }
@@ -11,11 +15,16 @@
   padding-bottom: 0;
 }
 
+#my .purple-words {
+  color:#9300FF;
+}
+
+
 #my .image.captioned p {
   background-color: #fff;
   box-shadow: 0px 0.0375em 0.125em 0px rgba(0, 0, 0, 0.15);
   display: block;
-  padding: 0em 1em 2em 1em;
+  padding: 0em 1em 1em 1em;
 }
 
 #my .no-bottom-margin {
@@ -26,13 +35,17 @@
   margin-top:3em;
 }
 
+#my .left-aligned {
+  text-align: left;
+}
+
 
 #my input[type="submit"],
 #my	input[type="reset"],
 #my	input[type="button"], 
 #my	.button {
   padding:0 2.2em;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 
