@@ -2,6 +2,40 @@
   text-transform: none;
 }
 
+#my .semi-bold {
+  font-size: 20px;
+  color: black;
+}
+
+#my .farrer {
+  padding-bottom: 4em;
+}
+
+#my .my-name {
+  margin-bottom: -5px;
+}
+
+#my .small-font {
+  font-size: 12px;
+  color: white;
+}
+
+#my .small-font-2 {
+  font-size: 22px;
+}
+
+#my .small-font-3 {
+  font-size: 18px;
+}
+
+#my .bachelor {
+  margin-bottom: 1em;
+}
+
+#my .bachelor + p {
+  margin-bottom: 7em;
+}
+
 #my .light-yellow {
   background-color:rgb(231, 255, 197);;
 }
