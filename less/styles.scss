@@ -160,7 +160,6 @@ body {
 .exicon 		{ margin-top: ($hexagon-height/2) - $hexagon-height + $v*2; margin-left: (-$hexagon-width/2) - $side*2; }
 .greensward 	{ margin-top: (-$hexagon-height/2) - $hexagon-height; 		margin-left: (-$hexagon-width/2) + $side*2; }
 .scmp			{ margin-top: ($hexagon-height/2) - $hexagon-height + $v*2; margin-left: (-$hexagon-width/2) + $side*2; }
-
 .page.title {
 	position: fixed;
 	text-align: center;
@@ -171,17 +170,6 @@ body {
 	font-size: 4em;
 	width: 100%;
 	line-height: 1.2em;
-
-
-    span {
-    	opacity: 0;
-        animation: fdsseq 1.5s ease 2s forwards;
-    }
-
-    .t2 {
-    	animation: fdsseq 2.5s ease 2s forwards;
-		animation-delay: 4s;
-	}
 }
 
 @keyframes fdsseq { 
@@ -192,27 +180,46 @@ body {
 	100% { transform: translate(0px, 0px); }
 }
 
+$start: 2s;
+$welcome: $start + 2s;
+$myname: $welcome + 2s;
+$button1: $myname + 3s;
+$button2: $button1 + .3s;
+$button3: $button2 + .3s;
+
+
+.page.title {
+	span {
+    	opacity: 0;
+        animation: fdsseq 1.5s ease $welcome forwards;
+    }
+
+    .t2 {
+    	animation: fdsseq 2.5s ease $myname forwards;
+	}
+}
+
 .section1.background {
-	animation: fdsseq 1.5s ease forwards;
+	animation: fdsseq 1.5s ease $start forwards;
 }
 
 .overlay, .hexagon {
 	opacity: 0;
 	transform: translate(0px, -70px); 
-	animation: fdsseq 3s ease 6s forwards,
-		tlseq 1s ease 6s forwards;
+	animation: fdsseq 3s ease $button1 forwards,
+		tlseq 1s ease $button1 forwards;
 
 
 	&.partner,
 	&.ability {
-		animation-delay: 6.3s, 6.3s;
+		animation-delay: $button2, $button2;
 	}
 
 	&.hkt,
 	&.exicon,
 	&.greensward,
 	&.scmp {
-		animation-delay: 6.6s, 6.6s;
+		animation-delay: $button3, $button3;
 	}
 
 	&.partner { transform: translate(-70px, -70px); }
