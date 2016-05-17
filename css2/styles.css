@@ -111,12 +111,6 @@ body {
   font-size: 4em;
   width: 100%;
   line-height: 1.2em; }
-  .page.title span {
-    opacity: 0;
-    animation: fdsseq 1.5s ease 2s forwards; }
-  .page.title .t2 {
-    animation: fdsseq 2.5s ease 2s forwards;
-    animation-delay: 4s; }
 
 @keyframes fdsseq {
   100% {
@@ -126,17 +120,24 @@ body {
   100% {
     transform: translate(0px, 0px); } }
 
+.page.title span {
+  opacity: 0;
+  animation: fdsseq 1.5s ease 4s forwards; }
+
+.page.title .t2 {
+  animation: fdsseq 2.5s ease 6s forwards; }
+
 .section1.background {
-  animation: fdsseq 1.5s ease forwards; }
+  animation: fdsseq 1.5s ease 2s forwards; }
 
 .overlay, .hexagon {
   opacity: 0;
   transform: translate(0px, -70px);
-  animation: fdsseq 3s ease 6s forwards, tlseq 1s ease 6s forwards; }
+  animation: fdsseq 3s ease 9s forwards, tlseq 1s ease 9s forwards; }
   .overlay.partner, .overlay.ability, .hexagon.partner, .hexagon.ability {
-    animation-delay: 6.3s, 6.3s; }
+    animation-delay: 9.3s, 9.3s; }
   .overlay.hkt, .overlay.exicon, .overlay.greensward, .overlay.scmp, .hexagon.hkt, .hexagon.exicon, .hexagon.greensward, .hexagon.scmp {
-    animation-delay: 6.6s, 6.6s; }
+    animation-delay: 9.6s, 9.6s; }
   .overlay.partner, .hexagon.partner {
     transform: translate(-70px, -70px); }
   .overlay.ability, .hexagon.ability {
