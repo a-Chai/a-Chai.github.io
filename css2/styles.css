@@ -139,10 +139,14 @@ body {
   .overlay.hkt, .overlay.exicon, .overlay.greensward, .overlay.scmp, .hexagon.hkt, .hexagon.exicon, .hexagon.greensward, .hexagon.scmp {
     animation-delay: 9.6s, 9.6s; }
   .overlay.partner, .hexagon.partner {
-    transform: translate(-70px, -70px); }
-  .overlay.ability, .hexagon.ability {
-    transform: translate(70px, -70px); }
-  .overlay.hkt, .overlay.exicon, .hexagon.hkt, .hexagon.exicon {
     transform: translate(-70px); }
-  .overlay.greensward, .overlay.scmp, .hexagon.greensward, .hexagon.scmp {
+  .overlay.ability, .hexagon.ability {
     transform: translate(70px); }
+  .overlay.hkt, .hexagon.hkt {
+    transform: translate(-70px, -70px); }
+  .overlay.greensward, .hexagon.greensward {
+    transform: translate(70px, -70px); }
+  .overlay.exicon, .hexagon.exicon {
+    transform: translate(-70px, 70px); }
+  .overlay.scmp, .hexagon.scmp {
+    transform: translate(70px, 70px); }

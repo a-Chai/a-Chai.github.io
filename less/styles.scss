@@ -222,10 +222,12 @@ $button3: $button2 + .3s;
 		animation-delay: $button3, $button3;
 	}
 
-	&.partner { transform: translate(-70px, -70px); }
-	&.ability { transform: translate(70px, -70px); }
-	&.hkt, &.exicon { transform: translate(-70px); }
-	&.greensward, &.scmp { transform: translate(70px); }
+	&.partner { transform: translate(-70px); }
+	&.ability { transform: translate(70px); }
+	&.hkt { transform: translate(-70px, -70px); }
+	&.greensward { transform: translate(70px, -70px); }
+	&.exicon { transform: translate(-70px, 70px); }
+	&.scmp { transform: translate(70px, 70px); }
 
 
 
