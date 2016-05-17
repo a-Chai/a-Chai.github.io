@@ -78,6 +78,7 @@
 
 			$window.on('load', function() {
 				$body.removeClass('is-loading');
+				$body.css("opacity", 1);
 			});
 
 		// Touch mode.
