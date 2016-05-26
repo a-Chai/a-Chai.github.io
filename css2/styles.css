@@ -15,7 +15,7 @@
   left: 0;
   padding: 50%;
   content: "";
-  display: none; }
+  opacity: 0; }
 
 body {
   margin: 0;
@@ -35,15 +35,32 @@ body {
   transition: all 2s .1s; }
 
 @keyframes inseq {
-  100% {
+  from {
+    opacity: 0; }
+  to {
     opacity: 1; } }
 
 @keyframes outseq {
-  100% {
+  from {
+    opacity: 1; }
+  to {
     opacity: 0; } }
 
 .page.title span {
-  display: none; }
+  opacity: 0;
+  animation: inseq 1.5s ease 4s forwards; }
+
+.page.title .t2 {
+  animation: inseq 2.5s ease 6s forwards; }
+
+.section1.background {
+  animation: inseq 1.5s ease 2s forwards; }
+
+@keyframes tlseq {
+  to {
+    top: 15%;
+    left: 12%;
+    margin-left: -50px; } }
 
 .page.title br {
   line-height: 1.4; }
@@ -60,9 +77,13 @@ body {
     font-weight: lighter;
     margin: 0 .8em;
     cursor: pointer;
-    display: inline-block; }
-    .buttons .button .button2 {
-      display: none; }
+    display: inline-block;
+    opacity: 0;
+    animation: inseq 3s ease 9s both; }
     .buttons .button.aboutme {
       font-size: 35px;
       margin: 0 1.8em; }
+    .buttons .button.partner, .buttons .button.ability {
+      animation-delay: 9.3s; }
+    .buttons .button.hkt, .buttons .button.exicon, .buttons .button.greensward, .buttons .button.scmp {
+      animation-delay: 9.6s; }

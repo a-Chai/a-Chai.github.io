@@ -1,32 +1,64 @@
 $(document).ready(function(){
 
-	var d_background = 1500,
-		d_welcome = 1500,
-		d_myname = 1500,
-		d_button = 3000;
+	// Queing Animation example
 
-	var que = [
-			{selector: ".section1.background", 	time: 1000, duration: d_background},
-			{selector: ".page.title span.t1", 	time: 500, duration: d_welcome},
-			{selector: ".page.title span.t2", 	time: 0, duration: d_myname},
-			{
-				selector1: ".aboutme .button2", 
-					time1: 0, duration1: d_button,
-				selector2: ".partner .button2, .ability .button2", 	
-					time2: 300, duration2: d_button,
-				selector3: ".hkt .button2, .exicon .button2, .greensward .button2, .scmp .button2",
-					time3: 600, duration3: d_button,
-				chain: 0
-			}
-		];
+	// var d_background = 1500,
+	// 	d_welcome = 1500,
+	// 	d_myname = 1500,
+	// 	d_button = 3000;
 
-	queing(que);
+	// var que = [
+	// 		{selector: ".section1.background", 	time: 1000, duration: d_background},
+	// 		{selector: ".page.title span.t1", 	time: 500, duration: d_welcome},
+	// 		{selector: ".page.title span.t2", 	time: 0, duration: d_myname},
+	// 		{
+	// 			selector1: ".aboutme .button2", 
+	// 				time1: 0, duration1: d_button,
+	// 			selector2: ".partner .button2, .ability .button2", 	
+	// 				time2: 300, duration2: d_button,
+	// 			selector3: ".hkt .button2, .exicon .button2, .greensward .button2, .scmp .button2",
+	// 				time3: 600, duration3: d_button,
+	// 			chain: 0
+	// 		}
+	// 	];
 
-	//$(".section1.background").delay(2000).fadeIn(1500);
+	//queing(que);
+
+	var fadeOutAni = "outseq 1.5s ease both";
+	var tlAni = "tlseq 2.5s ease-in-out both";
 
 
     $(".button").click(function(e){
+
+    	$(".page.title span")
+    		.css({
+    			"opacity": 0,
+    			"animation": fadeOutAni});
+    	$(".button").css("animation", "none");
+
+    	var copy = $(this).clone();
+
+    	$(copy)
+    		.css({"position": "fixed",
+    			"margin": 0,
+    			"opacity": 1})
+    		.offset($(this).offset());
+
+    	$(".buttons").append(copy);
+
+    	$(this).css("visibility", "hidden");
+    	$(copy).css("animation", tlAni);
+
+
+        
+        $(".button").not("." + $(this)[0].classList[1])
+        	.css({
+    			"opacity": 0,
+    			"animation": fadeOutAni});
+
     });
+
+
 });
 
 

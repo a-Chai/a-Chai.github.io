@@ -1,3 +1,11 @@
+
+
+@keyframes tlseq { 
+	to { top: 15%; 
+		left: 12%;
+		margin-left: -50px;}
+}
+
 .page.title br {
 	line-height: 1.4;
 }
@@ -17,30 +25,24 @@
 		cursor: pointer;
 		display: inline-block;
 
-		.button2 {
-			display: none;
-		}
-
-
-		//opacity: 0;
-		// transition: all 2s;
-		// animation: inseq 3s ease $button1 both;
+		opacity: 0;
+		animation: inseq 3s ease $button1 both;
 
 		&.aboutme {
 			font-size: 35px;
 			margin: 0 1.8em;
 		}
 
-		// &.partner,
-		// &.ability {
-		// 	animation-delay: $button2;
-		// }
+		&.partner,
+		&.ability {
+			animation-delay: $button2;
+		}
 
-		// &.hkt,
-		// &.exicon,
-		// &.greensward,
-		// &.scmp {
-		// 	animation-delay: $button3;
-		// }
+		&.hkt,
+		&.exicon,
+		&.greensward,
+		&.scmp {
+			animation-delay: $button3;
+		}
 	}
 }
