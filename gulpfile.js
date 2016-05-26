@@ -9,7 +9,7 @@ var onError = function (err) {
 };   
 
 gulp.task('sass', function() {
-    return gulp.src('less/styles.scss')         
+    return gulp.src('less/*.scss')         
         .pipe(sass().on('error', onError))                          
         .pipe(gulp.dest('css2'))
         .pipe(browserSync.reload({
@@ -26,7 +26,7 @@ gulp.task('browserSync', function() {
 })
 
 gulp.task('watch', ['browserSync', 'sass'], function(){
-  gulp.watch('less/styles.scss', ['sass']); 
+  gulp.watch('less/*.scss', ['sass']); 
   gulp.watch('index-2.html', browserSync.reload); 
 })
 

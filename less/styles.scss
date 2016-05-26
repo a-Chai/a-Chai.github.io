@@ -1,12 +1,3 @@
-$hexagon-width: 100px;
-$hexagon-height: 159px;
-$side: $hexagon-width*3/2 + 8px;
-$border: 8px;
-$v: 10px;
-$gold: rgb(209,181,85);
-$gold2: rgb(143,111,77);
-$tblack: rgba(0,0,0,0.4);
-
 @font-face {
     font-family: BLKCHCRY;
     src: url(../fonts2/BLKCHCRY.TTF);
@@ -17,16 +8,16 @@ $tblack: rgba(0,0,0,0.4);
     src: url(../fonts2/Darleston.otf);
 }
 
+
 .section1.background {
-	background-attachment: fixed;
-	background-image: url("../images2/bg.jpg");
-	background-position: center center;
+	background: url("../images2/bg.jpg") no-repeat center center fixed; 
 	background-size: cover;
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 45%;
+	position: fixed;
 	z-index: -10;
+	top: 0;
+	left: 0;
+	padding: 50%;
+	content: "";
 	opacity: 0;
 }
 
@@ -35,131 +26,6 @@ body {
 	background-color: black;
 }
 
-.overlay, .hexagon {
-	position: fixed;
-	top: 75%;
-	left: 48%;
-}
-
-.hexagon {
-	height: $hexagon-height;
-	margin-left: (-$hexagon-width/2);
-	margin-top: (-$hexagon-height/2);
-	font-family: BLKCHCRY;  
-	
-
-	&,
-	&:before,
-	&:after {
-
-		width: $hexagon-width;
-
-		border-top: $border ridge $gold;
-		border-bottom: $border ridge $gold;
-		border-left: 0 none;
-		border-right: 0 none;
-
-		// -webkit-border-image: 
-	 //      -webkit-gradient(linear, 100% 0, 0 0, from(black), to($gold)) 1 100%;
-	 //    -webkit-border-image: 
-	 //      -webkit-linear-gradient(right, black, $gold) 1 100%;
-	 //    -moz-border-image:
-	 //      -moz-linear-gradient(right, black, $gold) 1 100%;  
-	 //    -o-border-image:
-	 //      -o-linear-gradient(right, black, $gold) 1 100%;
-	 //    border-image:
-	 //      linear-gradient(to right, black, $gold) 1 100%;
-
-
-
-	}
-
-	&:before,
-	&:after {
-		
-		content: "";
-		height: $hexagon-height;
-		position: absolute;
-		top: -8px;
-	}
-
-	&:before {
-		transform: rotate(60deg);
-
-		// background: rgba(160,145,70,1);
-		// background: -moz-linear-gradient(left, rgba(160,145,70,1) 0%, rgba(255,246,175,1) 51%, rgba(90,75,0,1) 78%, rgba(230,214,135,1) 100%);
-		// background: -webkit-gradient(left top, right top, color-stop(0%, rgba(160,145,70,1)), color-stop(51%, rgba(255,246,175,1)), color-stop(78%, rgba(90,75,0,1)), color-stop(100%, rgba(230,214,135,1)));
-		// background: -webkit-linear-gradient(left, rgba(160,145,70,1) 0%, rgba(255,246,175,1) 51%, rgba(90,75,0,1) 78%, rgba(230,214,135,1) 100%);
-		// background: -o-linear-gradient(left, rgba(160,145,70,1) 0%, rgba(255,246,175,1) 51%, rgba(90,75,0,1) 78%, rgba(230,214,135,1) 100%);
-		// background: -ms-linear-gradient(left, rgba(160,145,70,1) 0%, rgba(255,246,175,1) 51%, rgba(90,75,0,1) 78%, rgba(230,214,135,1) 100%);
-	}
-
-	&:after {
-		transform: rotate(120deg);
-	}
-
-	div {
-		width: 150%;
-		overflow: hidden;
-		margin-left: -25%;
-		color: white;
-		line-height: 6.7;
-		text-align: center;
-		font-size: 24px;
-	}
-
-}
-
-.overlay {
-	width:	$hexagon-width - 4px;
-	height:	$hexagon-height + $border*2;
-
-	background-color: $tblack;
-
-	// &:hover {
-	// 	background: rgba(160,145,70,0.5);
-	// 	background: -moz-linear-gradient(left, rgba(160,145,70,0.5) 0%, rgba(255,246,175,0.5) 35%, rgba(90,75,0,0.5) 68%, rgba(230,214,135,0.5) 100%);
-	// 	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(160,145,70,0.5)), color-stop(35%, rgba(255,246,175,0.5)), color-stop(68%, rgba(90,75,0,0.5)), color-stop(100%, rgba(230,214,135,0.5)));
-	// 	background: -webkit-linear-gradient(left, rgba(160,145,70,0.5) 0%, rgba(255,246,175,0.5) 35%, rgba(90,75,0,0.5) 68%, rgba(230,214,135,0.5) 100%);
-	// 	background: -o-linear-gradient(left, rgba(160,145,70,0.5) 0%, rgba(255,246,175,0.5) 35%, rgba(90,75,0,0.5) 68%, rgba(230,214,135,0.5) 100%);
-	// 	background: -ms-linear-gradient(left, rgba(160,145,70,0.5) 0%, rgba(255,246,175,0.5) 35%, rgba(90,75,0,0.5) 68%, rgba(230,214,135,0.5) 100%);
-
-	// 	&:before {
-	// 		border-left: 55px solid rgba(230,214,135,0.5);
-	// 	}
-
-	// 	&:after {
-	// 		border-right: 55px solid rgba(160,145,70,0.5);
-	// 	}
-	// }
-
-	&:before,
-	&:after {
-		content: "";
-		position: absolute;
-		width: 0;
-		border-top: 87px solid transparent;
-		border-bottom: 87px solid transparent;
-	}
-
-	&:before {
-		left: 100%;
-		border-left: 55px solid $tblack;
-	}
-
-	&:after {
-		right: 100%;
-		border-right: 55px solid $tblack;
-	}
-}
-
-.aboutme 		{ margin-top: (-$hexagon-height/2) - $hexagon-height;		margin-left: (-$hexagon-width/2); }
-.partner 		{ margin-top: -$hexagon-height + $v; 						margin-left: (-$hexagon-width/2) - $side; }
-.ability 		{ margin-top: -$hexagon-height + $v; 						margin-left: (-$hexagon-width/2) + $side; }
-.hkt 			{ margin-top: (-$hexagon-height/2) - $hexagon-height;		margin-left: (-$hexagon-width/2) - $side*2; }
-.exicon 		{ margin-top: ($hexagon-height/2) - $hexagon-height + $v*2; margin-left: (-$hexagon-width/2) - $side*2; }
-.greensward 	{ margin-top: (-$hexagon-height/2) - $hexagon-height; 		margin-left: (-$hexagon-width/2) + $side*2; }
-.scmp			{ margin-top: ($hexagon-height/2) - $hexagon-height + $v*2; margin-left: (-$hexagon-width/2) + $side*2; }
 .page.title {
 	position: fixed;
 	text-align: center;
@@ -170,15 +36,19 @@ body {
 	font-size: 4em;
 	width: 100%;
 	line-height: 1.2em;
+	background: rgba(20,19,3, .25);
+	transition: all 2s .1s;
 }
 
-@keyframes fdsseq { 
+@keyframes inseq { 
 	100% { opacity: 1; }
 }
 
-@keyframes tlseq { 
-	100% { transform: translate(0px, 0px); }
+@keyframes outseq { 
+	100% { opacity: 0; }
 }
+
+
 
 $start: 2s;
 $welcome: $start + 2s;
@@ -191,45 +61,21 @@ $button3: $button2 + .3s;
 .page.title {
 	span {
     	opacity: 0;
-        animation: fdsseq 1.5s ease $welcome forwards;
+        animation: inseq 1.5s ease $welcome forwards;
     }
 
     .t2 {
-    	animation: fdsseq 2.5s ease $myname forwards;
+    	animation: inseq 2.5s ease $myname forwards;
 	}
 }
 
 .section1.background {
-	animation: fdsseq 1.5s ease $start forwards;
+	animation: inseq 1.5s ease $start forwards;
 }
 
-.overlay, .hexagon {
-	opacity: 0;
-	transform: translate(0px, -70px); 
-	animation: fdsseq 3s ease $button1 forwards,
-		tlseq 1s ease $button1 forwards;
-
-
-	&.partner,
-	&.ability {
-		animation-delay: $button2, $button2;
-	}
-
-	&.hkt,
-	&.exicon,
-	&.greensward,
-	&.scmp {
-		animation-delay: $button3, $button3;
-	}
-
-	&.partner { transform: translate(-70px); }
-	&.ability { transform: translate(70px); }
-	&.hkt { transform: translate(-70px, -70px); }
-	&.greensward { transform: translate(70px, -70px); }
-	&.exicon { transform: translate(-70px, 70px); }
-	&.scmp { transform: translate(70px, 70px); }
+// @import 'hexagon_theme';
+@import 'theatre_theme';
 
 
 
-}
 

@@ -7,99 +7,19 @@
   src: url(../fonts2/Darleston.otf); }
 
 .section1.background {
-  background-attachment: fixed;
-  background-image: url("../images2/bg.jpg");
-  background-position: center center;
+  background: url("../images2/bg.jpg") no-repeat center center fixed;
   background-size: cover;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 45%;
+  position: fixed;
   z-index: -10;
+  top: 0;
+  left: 0;
+  padding: 50%;
+  content: "";
   opacity: 0; }
 
 body {
   margin: 0;
   background-color: black; }
-
-.overlay, .hexagon {
-  position: fixed;
-  top: 75%;
-  left: 48%; }
-
-.hexagon {
-  height: 159px;
-  margin-left: -50px;
-  margin-top: -79.5px;
-  font-family: BLKCHCRY; }
-  .hexagon, .hexagon:before, .hexagon:after {
-    width: 100px;
-    border-top: 8px ridge #d1b555;
-    border-bottom: 8px ridge #d1b555;
-    border-left: 0 none;
-    border-right: 0 none; }
-  .hexagon:before, .hexagon:after {
-    content: "";
-    height: 159px;
-    position: absolute;
-    top: -8px; }
-  .hexagon:before {
-    transform: rotate(60deg); }
-  .hexagon:after {
-    transform: rotate(120deg); }
-  .hexagon div {
-    width: 150%;
-    overflow: hidden;
-    margin-left: -25%;
-    color: white;
-    line-height: 6.7;
-    text-align: center;
-    font-size: 24px; }
-
-.overlay {
-  width: 96px;
-  height: 175px;
-  background-color: rgba(0, 0, 0, 0.4); }
-  .overlay:before, .overlay:after {
-    content: "";
-    position: absolute;
-    width: 0;
-    border-top: 87px solid transparent;
-    border-bottom: 87px solid transparent; }
-  .overlay:before {
-    left: 100%;
-    border-left: 55px solid rgba(0, 0, 0, 0.4); }
-  .overlay:after {
-    right: 100%;
-    border-right: 55px solid rgba(0, 0, 0, 0.4); }
-
-.aboutme {
-  margin-top: -238.5px;
-  margin-left: -50px; }
-
-.partner {
-  margin-top: -149px;
-  margin-left: -208px; }
-
-.ability {
-  margin-top: -149px;
-  margin-left: 108px; }
-
-.hkt {
-  margin-top: -238.5px;
-  margin-left: -366px; }
-
-.exicon {
-  margin-top: -59.5px;
-  margin-left: -366px; }
-
-.greensward {
-  margin-top: -238.5px;
-  margin-left: 266px; }
-
-.scmp {
-  margin-top: -59.5px;
-  margin-left: 266px; }
 
 .page.title {
   position: fixed;
@@ -110,43 +30,51 @@ body {
   top: 0em;
   font-size: 4em;
   width: 100%;
-  line-height: 1.2em; }
+  line-height: 1.2em;
+  background: rgba(20, 19, 3, 0.25);
+  transition: all 2s .1s; }
 
-@keyframes fdsseq {
+@keyframes inseq {
   100% {
     opacity: 1; } }
 
-@keyframes tlseq {
+@keyframes outseq {
   100% {
-    transform: translate(0px, 0px); } }
+    opacity: 0; } }
 
 .page.title span {
   opacity: 0;
-  animation: fdsseq 1.5s ease 4s forwards; }
+  animation: inseq 1.5s ease 4s forwards; }
 
 .page.title .t2 {
-  animation: fdsseq 2.5s ease 6s forwards; }
+  animation: inseq 2.5s ease 6s forwards; }
 
 .section1.background {
-  animation: fdsseq 1.5s ease 2s forwards; }
+  animation: inseq 1.5s ease 2s forwards; }
 
-.overlay, .hexagon {
-  opacity: 0;
-  transform: translate(0px, -70px);
-  animation: fdsseq 3s ease 9s forwards, tlseq 1s ease 9s forwards; }
-  .overlay.partner, .overlay.ability, .hexagon.partner, .hexagon.ability {
-    animation-delay: 9.3s, 9.3s; }
-  .overlay.hkt, .overlay.exicon, .overlay.greensward, .overlay.scmp, .hexagon.hkt, .hexagon.exicon, .hexagon.greensward, .hexagon.scmp {
-    animation-delay: 9.6s, 9.6s; }
-  .overlay.partner, .hexagon.partner {
-    transform: translate(-70px); }
-  .overlay.ability, .hexagon.ability {
-    transform: translate(70px); }
-  .overlay.hkt, .hexagon.hkt {
-    transform: translate(-70px, -70px); }
-  .overlay.greensward, .hexagon.greensward {
-    transform: translate(70px, -70px); }
-  .overlay.exicon, .hexagon.exicon {
-    transform: translate(-70px, 70px); }
-  .overlay.scmp, .hexagon.scmp {
-    transform: translate(70px, 70px); }
+.page.title br {
+  line-height: 1.4; }
+
+.buttons {
+  position: fixed;
+  bottom: 3.5em;
+  text-align: center;
+  width: 100%; }
+  .buttons .button {
+    color: white;
+    font-size: 28px;
+    font-family: BLKCHCRY;
+    font-weight: lighter;
+    margin: 0 .8em;
+    cursor: pointer;
+    opacity: 0;
+    display: inline-block;
+    transition: all 2s;
+    animation: inseq 3s ease 9s both; }
+    .buttons .button.aboutme {
+      font-size: 35px;
+      margin: 0 1.8em; }
+    .buttons .button.partner, .buttons .button.ability {
+      animation-delay: 9.3s; }
+    .buttons .button.hkt, .buttons .button.exicon, .buttons .button.greensward, .buttons .button.scmp {
+      animation-delay: 9.6s; }

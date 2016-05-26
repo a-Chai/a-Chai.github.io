@@ -1,0 +1,40 @@
+.page.title br {
+	line-height: 1.4;
+}
+
+.buttons {
+	position: fixed;
+	bottom: 3.5em;
+	text-align: center;
+	width: 100%;
+
+	.button {
+		color: white;
+		font-size: 28px;
+		font-family: BLKCHCRY;
+    	font-weight: lighter;
+		margin: 0 .8em;
+		cursor: pointer;
+		opacity: 0;
+		display: inline-block;
+		transition: all 2s;
+		animation: inseq 3s ease $button1 both;
+
+		&.aboutme {
+			font-size: 35px;
+			margin: 0 1.8em;
+		}
+
+		&.partner,
+		&.ability {
+			animation-delay: $button2;
+		}
+
+		&.hkt,
+		&.exicon,
+		&.greensward,
+		&.scmp {
+			animation-delay: $button3;
+		}
+	}
+}
