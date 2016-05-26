@@ -18,7 +18,9 @@
 	left: 0;
 	padding: 50%;
 	content: "";
-	opacity: 0;
+
+	//opacity: 0;
+	display: none;
 }
 
 body {
@@ -58,20 +60,26 @@ $button2: $button1 + .3s;
 $button3: $button2 + .3s;
 
 
+
+// !!!!!!!!!!!! Don't delete animation comment, it is for hexgon theme !!!!!!!!!!!!!!!!!!!
+
+
 .page.title {
 	span {
-    	opacity: 0;
-        animation: inseq 1.5s ease $welcome forwards;
+		display: none;
+
+    	//opacity: 0;
+        // animation: inseq 1.5s ease $welcome forwards;
     }
 
     .t2 {
-    	animation: inseq 2.5s ease $myname forwards;
+    	// animation: inseq 2.5s ease $myname forwards;
 	}
 }
 
-.section1.background {
-	animation: inseq 1.5s ease $start forwards;
-}
+// .section1.background {
+// 	animation: inseq 1.5s ease $start forwards;
+// }
 
 // @import 'hexagon_theme';
 @import 'theatre_theme';

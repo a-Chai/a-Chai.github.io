@@ -15,7 +15,7 @@
   left: 0;
   padding: 50%;
   content: "";
-  opacity: 0; }
+  display: none; }
 
 body {
   margin: 0;
@@ -43,14 +43,7 @@ body {
     opacity: 0; } }
 
 .page.title span {
-  opacity: 0;
-  animation: inseq 1.5s ease 4s forwards; }
-
-.page.title .t2 {
-  animation: inseq 2.5s ease 6s forwards; }
-
-.section1.background {
-  animation: inseq 1.5s ease 2s forwards; }
+  display: none; }
 
 .page.title br {
   line-height: 1.4; }
@@ -67,14 +60,9 @@ body {
     font-weight: lighter;
     margin: 0 .8em;
     cursor: pointer;
-    opacity: 0;
-    display: inline-block;
-    transition: all 2s;
-    animation: inseq 3s ease 9s both; }
+    display: inline-block; }
+    .buttons .button .button2 {
+      display: none; }
     .buttons .button.aboutme {
       font-size: 35px;
       margin: 0 1.8em; }
-    .buttons .button.partner, .buttons .button.ability {
-      animation-delay: 9.3s; }
-    .buttons .button.hkt, .buttons .button.exicon, .buttons .button.greensward, .buttons .button.scmp {
-      animation-delay: 9.6s; }
