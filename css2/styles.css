@@ -31,14 +31,15 @@ body {
   font-size: 4em;
   width: 100%;
   line-height: 1.2em;
-  background: rgba(20, 19, 3, 0.25);
-  transition: all 2s .1s; }
+  background: rgba(20, 19, 3, 0.25); }
 
 @keyframes inseq {
-  from {
-    opacity: 0; }
   to {
     opacity: 1; } }
+
+@keyframes layerinseq {
+  to {
+    opacity: 0.55; } }
 
 @keyframes outseq {
   from {
@@ -60,10 +61,21 @@ body {
   to {
     top: 15%;
     left: 12%;
-    margin-left: -50px; } }
+    margin-left: -50px;
+    transform: scale(1.7); } }
 
 .page.title br {
   line-height: 1.4; }
+
+.overlay {
+  position: fixed;
+  top: 15%;
+  bottom: 15%;
+  left: 12%;
+  right: 12%;
+  margin: 18px -20px 0 -20px;
+  background: black;
+  opacity: 0; }
 
 .buttons {
   position: fixed;

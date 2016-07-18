@@ -25,7 +25,8 @@ $(document).ready(function(){
 	//queing(que);
 
 	var fadeOutAni = "outseq 1.5s ease both";
-	var tlAni = "tlseq 2.5s ease-in-out both";
+	var tlAni = "tlseq 1.5s ease-in-out both";
+	var layerAni = "layerinseq 2.5s ease-in-out both";
 
 
     $(".button").click(function(e){
@@ -39,7 +40,8 @@ $(document).ready(function(){
     	var copy = $(this).clone();
 
     	$(copy)
-    		.css({"position": "fixed",
+    		.css({
+    			"position": "fixed",
     			"margin": 0,
     			"opacity": 1})
     		.offset($(this).offset());
@@ -50,11 +52,15 @@ $(document).ready(function(){
     	$(copy).css("animation", tlAni);
 
 
-        
-        $(".button").not("." + $(this)[0].classList[1])
+        console.log($(".button").not("." + $(this).attr('class').replace(" ", ".") ));
+        $(".button").not("." + $(this).attr('class').replace(" ", ".") )
         	.css({
     			"opacity": 0,
     			"animation": fadeOutAni});
+
+        $(".overlay").css({
+        	"opacity": 0,
+        	"animation": layerAni})
 
     });
 
