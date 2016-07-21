@@ -13,7 +13,8 @@
   z-index: -10;
   top: 0;
   left: 0;
-  padding: 50%;
+  width: 100vw;
+  height: 100vh;
   content: "";
   opacity: 0; }
 
@@ -47,6 +48,12 @@ body {
   to {
     opacity: 0; } }
 
+@keyframes half_outseq {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0.4; } }
+
 .page.title span {
   opacity: 0;
   animation: inseq 1.5s ease 4s forwards; }
@@ -57,12 +64,12 @@ body {
 .section1.background {
   animation: inseq 1.5s ease 2s forwards; }
 
-@keyframes tlseq {
+@keyframes moveToLeftTop {
   to {
     top: 15%;
     left: 12%;
     margin-left: -50px;
-    transform: scale(1.7); } }
+    transform: scale(1.8); } }
 
 .page.title br {
   line-height: 1.4; }

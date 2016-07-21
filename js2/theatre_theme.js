@@ -25,39 +25,46 @@ $(document).ready(function(){
 	//queing(que);
 
 	var fadeOutAni = "outseq 1.5s ease both";
-	var tlAni = "tlseq 1.5s ease-in-out both";
+	var moveToLeftTop = "moveToLeftTop 1.5s ease-in-out both";
 	var layerAni = "layerinseq 2.5s ease-in-out both";
+	var half_outAni = "half_outAni 2.5s ease-in-out both";
 
 
     $(".button").click(function(e){
 
-    	$(".page.title span")
-    		.css({
+    	// Fade out background title.
+    	$(".page.title span").
+    		css({
     			"opacity": 0,
     			"animation": fadeOutAni});
-    	$(".button").css("animation", "none");
 
+
+    	// Clone the words and place on top of the buttons.
+    	//$(".button").css("animation", "none");
     	var copy = $(this).clone();
 
-    	$(copy)
-    		.css({
+    	$(copy).addClass("copy").
+    		css({
     			"position": "fixed",
     			"margin": 0,
-    			"opacity": 1})
-    		.offset($(this).offset());
+    			"opacity": 1}).
+    		offset( $(this).offset() );
 
     	$(".buttons").append(copy);
 
+
+    	// hidden the original one and move the clone.
     	$(this).css("visibility", "hidden");
-    	$(copy).css("animation", tlAni);
+    	$(copy).css("animation", moveToLeftTop);
+
+        $(".button").
+        	not( "." + $(this).attr('class').replace(" ", ".") ).
+        	css({
+    			"opacity": 0.4,
+    			"animation": half_outAni});
 
 
-        console.log($(".button").not("." + $(this).attr('class').replace(" ", ".") ));
-        $(".button").not("." + $(this).attr('class').replace(" ", ".") )
-        	.css({
-    			"opacity": 0,
-    			"animation": fadeOutAni});
-
+        // popup layer.
         $(".overlay").css({
         	"opacity": 0,
         	"animation": layerAni})
@@ -80,7 +87,6 @@ function queing(q, it) {
 		var par = 1;
 
 		while (q[it]["selector" + par]) {
-			console.log("I am Here~!");
 			$(q[it]["selector" + par])
 				.delay(q[it]["time" + par])
 				.fadeIn(q[it]["duration" + par],
